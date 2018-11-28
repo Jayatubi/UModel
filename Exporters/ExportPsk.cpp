@@ -87,7 +87,7 @@ static void ExportCommonMeshData
 	SAVE_CHUNK(MainHdr, "ACTRHEAD");
 
 	PtsHdr.DataCount = Share.Points.Num();
-	PtsHdr.DataSize  = sizeof(FVector);
+	PtsHdr.DataSize  = sizeof(FVector) + sizeof(int32);
 	SAVE_CHUNK(PtsHdr, "PNTS0000");
 	for (i = 0; i < Share.Points.Num(); i++)
 	{
@@ -96,6 +96,7 @@ static void ExportCommonMeshData
 		V.Y = -V.Y;
 #endif
 		Ar << V;
+		Ar << Share.Colors[i];
 	}
 
 	// get number of faces (some Gears3 meshes may have index buffer larger than needed)
@@ -272,7 +273,7 @@ static void ExportSkeletalMeshLod(const CSkeletalMesh &Mesh, const CSkelMeshLod 
 		uint32 WeightsHash = S.PackedWeights;
 		for (j = 0; j < ARRAY_COUNT(S.Bone); j++)
 			WeightsHash ^= S.Bone[j] << j;
-		Share.AddVertex(S.Position, S.Normal, WeightsHash);
+		Share.AddVertex(S.Position, S.Color, S.Normal, WeightsHash);
 	}
 //	appPrintProfiler();
 //	appPrintf("%d wedges were welded into %d verts\n", Lod.NumVerts, Share.Points.Num());
@@ -590,7 +591,7 @@ static void ExportStaticMeshLod(const CStaticMeshLod &Lod, FArchive &Ar)
 	for (int i = 0; i < Lod.NumVerts; i++)
 	{
 		const CMeshVertex &S = Lod.Verts[i];
-		Share.AddVertex(S.Position, S.Normal);
+		Share.AddVertex(S.Position, 0xFFFFFFFF, S.Normal);
 	}
 //	appPrintProfiler();
 //	appPrintf("%d wedges were welded into %d verts\n", Lod.NumVerts, Share.Points.Num());

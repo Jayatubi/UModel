@@ -611,7 +611,7 @@ struct FGPUVert3Common
 	FPackedNormal		Normal[3];
 	byte				BoneIndex[NUM_INFLUENCES_UE3];
 	byte				BoneWeight[NUM_INFLUENCES_UE3];
-
+	int32				VertexColor;
 	void Serialize(FArchive &Ar)
 	{
 #if AVA
@@ -635,8 +635,9 @@ struct FGPUVert3Common
 #if GUILTY
 		if (Ar.Game == GAME_Guilty && Ar.ArLicenseeVer >= 1)
 		{
-			int unk;		// probably vertex color - this was removed from FStaticLODModel3 serializer
-			Ar << unk;
+			//int unk;		// probably vertex color - this was removed from FStaticLODModel3 serializer
+			//Ar << unk;
+			Ar << VertexColor;
 		}
 #endif // GUILTY
 	}
@@ -2056,6 +2057,7 @@ void USkeletalMesh3::ConvertMesh()
 						Lod->ExtraUV[TexCoordIndex-1][Vert] = CVT(SUV[TexCoordIndex]);
 					}
 				}
+				D->Color = V->VertexColor;
 				// convert Normal[3]
 				UnpackNormals(V->Normal, *D);
 				// convert influences

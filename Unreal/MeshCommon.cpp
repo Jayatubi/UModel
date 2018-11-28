@@ -27,7 +27,7 @@ void BuildNormalsCommon(CMeshVertex *Verts, int VertexSize, int NumVerts, const 
 	{
 		CPackedNormal NullVec;
 		NullVec.Data = 0;
-		Share.AddVertex(VERT(i)->Position, NullVec);
+		Share.AddVertex(VERT(i)->Position, 0xFFFFFFFF, NullVec);
 	}
 
 	CIndexBuffer::IndexAccessor_t Index = Indices.GetAccessor();

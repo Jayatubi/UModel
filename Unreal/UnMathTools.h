@@ -88,6 +88,7 @@ inline void ComputeBounds(const T *Data, int NumVerts, int Stride, CVec3 &Mins, 
 struct CVertexShare
 {
 	TArray<CVec3>	Points;
+	TArray<int32>   Colors;
 	TArray<CPackedNormal> Normals;
 	TArray<uint32>	ExtraInfos;
 	TArray<int>		WedgeToVert;
@@ -122,7 +123,7 @@ struct CVertexShare
 #endif // USE_HASHING
 	}
 
-	int AddVertex(const CVec3 &Pos, CPackedNormal Normal, uint32 ExtraInfo = 0)
+	int AddVertex(const CVec3 &Pos, int32 Color, CPackedNormal Normal, uint32 ExtraInfo = 0)
 	{
 		int PointIndex = -1;
 
@@ -153,6 +154,7 @@ struct CVertexShare
 		{
 			// point was not found - create it
 			PointIndex = Points.Add(Pos);
+			Colors.Add(Color);
 			Normals.Add(Normal);
 			ExtraInfos.Add(ExtraInfo);
 #if USE_HASHING

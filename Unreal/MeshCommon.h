@@ -134,6 +134,7 @@ struct CMeshVertex
 	CPackedNormal			Normal;
 	CPackedNormal			Tangent;
 	CMeshUVFloat			UV;				// base UV channel
+	int32                   Color;
 
 	void DecodeTangents(CVecT& OutNormal, CVecT& OutTangent, CVecT& OutBinormal) const
 	{

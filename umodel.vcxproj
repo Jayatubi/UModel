@@ -316,14 +316,14 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>D:\UModel;D:\UModel\libs;D:\UModel\libs\zlib;D:\UModel\libs\detex;D:\UModel\libs\PowerVR;D:\UModel\libs\nvtt;D:\UModel\libs\include;D:\UModel\libs\includewin32;D:\UModel\Core;D:\UModel\Unreal;D:\UModel\UI;D:\UModel\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\libs;$(SolutionDir)\libs\zlib;$(SolutionDir)\libs\detex;$(SolutionDir)\libs\PowerVR;$(SolutionDir)\libs\nvtt;$(SolutionDir)\libs\include;$(SolutionDir)\libs\includewin32;$(SolutionDir)\Core;$(SolutionDir)\Unreal;$(SolutionDir)\UI;$(SolutionDir)\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>D:\UModel\libs\SDL2\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\SDL2\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -333,7 +333,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>D:\UModel;D:\UModel\libs;D:\UModel\libs\zlib;D:\UModel\libs\detex;D:\UModel\libs\PowerVR;D:\UModel\libs\nvtt;D:\UModel\libs\include;D:\UModel\libs\includewin32;D:\UModel\Core;D:\UModel\Unreal;D:\UModel\UI;D:\UModel\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\libs;$(SolutionDir)\libs\zlib;$(SolutionDir)\libs\detex;$(SolutionDir)\libs\PowerVR;$(SolutionDir)\libs\nvtt;$(SolutionDir)\libs\include;$(SolutionDir)\libs\includewin32;$(SolutionDir)\Core;$(SolutionDir)\Unreal;$(SolutionDir)\UI;$(SolutionDir)\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
@@ -342,18 +342,18 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>D:\UModel\libs\SDL2\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\SDL2\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalLibraryDirectories>D:\UModel\libs\SDL2\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\SDL2\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\UModel;D:\UModel\libs;D:\UModel\libs\zlib;D:\UModel\libs\detex;D:\UModel\libs\PowerVR;D:\UModel\libs\nvtt;D:\UModel\libs\include;D:\UModel\libs\includewin32;D:\UModel\Core;D:\UModel\Unreal;D:\UModel\UI;D:\UModel\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\libs;$(SolutionDir)\libs\zlib;$(SolutionDir)\libs\detex;$(SolutionDir)\libs\PowerVR;$(SolutionDir)\libs\nvtt;$(SolutionDir)\libs\include;$(SolutionDir)\libs\includewin32;$(SolutionDir)\Core;$(SolutionDir)\Unreal;$(SolutionDir)\UI;$(SolutionDir)\UmodelTool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
   </ItemDefinitionGroup>
